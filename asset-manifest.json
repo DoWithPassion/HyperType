@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HyperType/static/css/main.25563dce.chunk.css",
-    "main.js": "/HyperType/static/js/main.c089d59c.chunk.js",
+    "main.js": "/HyperType/static/js/main.8c6f9c72.chunk.js",
     "runtime-main.js": "/HyperType/static/js/runtime-main.ae06478f.js",
     "static/js/2.c074e627.chunk.js": "/HyperType/static/js/2.c074e627.chunk.js",
     "index.html": "/HyperType/index.html",
@@ -13,6 +13,6 @@
     "static/js/runtime-main.ae06478f.js",
     "static/js/2.c074e627.chunk.js",
     "static/css/main.25563dce.chunk.css",
-    "static/js/main.c089d59c.chunk.js"
+    "static/js/main.8c6f9c72.chunk.js"
   ]
 }
