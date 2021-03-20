@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Hyper Type
+    - A website for checking your typing speed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### LifeCycle Methods
+- Constructor is called 
+- Later Render method is called
+- **componentDidMount** is a function that will be called as soon as component is rendered or mounted on to the DOM tree(for only once or first time of component rendering).
+- **componentWillUnmount** is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount(). 
+- **componentDidUpdate** is invoked immediately after updating occurs. This method is not called for the initial render.
 
-## Available Scripts
 
-In the project directory, you can run:
+### setTimeout & setInterval
+ - setTimeout means it will runs the piece of code after the given period of time.
+ - setInterval means it will runs the piece of code again and again after the given period of time.
+ - The only difference is , setTimeout() triggers the expression only once while setInterval() keeps triggering expression regularly after the given interval of time. (unless you tell it to stop). To stop further calls, we should call clearInterval(timerId
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Algorithm for typing speed
+  *  1. Handle Underflow case - All the chars should be shown as not attempted
+    * 2. Handle Overflow case - Early exit
+    * 3. Handle the backspace
+    *      - Mark the [index+1] element as not attempted (irrespective of whether the index is less than zero) 
+    *      - But, dont forget to check for the overflow case
+    *          (index+1 can go outbound, when the index===length-1)
+    * 4. Update the status in the testinfo
+    *      - Find out the last char in the inputValue and its index
+    *      - Check if the character at same index in testInfo (state) matches
+    *      - Yes -> "Correct"
+    *      - No -> "incorrect"
+    * 5. Irrespected of the case, characters, words and speed (wpm) should be updated
 
 ### Deployment
+`npm install gh-pages --save-dev`
+- Update package.json
+- "homepage":""
+<!--In Scripts -->
+- "predeploy": "npm run build"
+- "deploy":"gh-pages -d build"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Paragraph generator API
+- In this project, I have used the below api for generating paragraphs.
+[https://baconipsum.com/api/?type=all-meat&paras=3&start-with-lorem=1&format=text](https://baconipsum.com/api/?type=all-meat&paras=3&start-with-lorem=1&format=text)
+- And also used txtgen package to generate paragraphs
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
