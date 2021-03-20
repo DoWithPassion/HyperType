@@ -32,6 +32,7 @@
 `npm install gh-pages --save-dev`
 - Update package.json
 - "homepage":""
+- Push to git
 <!--In Scripts -->
 - "predeploy": "npm run build"
 - "deploy":"gh-pages -d build"

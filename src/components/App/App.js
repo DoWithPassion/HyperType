@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 import Nav from '../Nav/Nav'
 import Landing from '../Landing/Landing'
@@ -9,7 +9,7 @@ const txtgen = require('txtgen');
 const TotalTime = 60
 const ServiceUrl = "https://baconipsum.com/api/?type=all-meat&paras=3&start-with-lorem=1&format=text"
 const DefaultState = {
-    selectedParagraph: "",
+    selectedParagraph: "My",
     timerStarted: false,
     timeRemaining: TotalTime,
     words: 0,
@@ -34,7 +34,8 @@ class App extends React.Component {
                 status: "notAttempted"
             }
         })
-        this.setState({ ...DefaultState, testInfo, information })
+        let selectedParagraph = information
+        this.setState({ ...DefaultState, testInfo, selectedParagraph })
     }
 
     fetchNewParagraph = () => {
@@ -47,7 +48,8 @@ class App extends React.Component {
                     status: "notAttempted"
                 }
             })
-            this.setState({ ...DefaultState, testInfo, information })
+            let selectedParagraph = information
+            this.setState({ ...DefaultState, testInfo, selectedParagraph })
         })
 
     }
@@ -140,7 +142,7 @@ class App extends React.Component {
 
 
         }
-        console.log("Here")
+        // console.log(this.state)
 
         // Check for the correct typed letter
         const isCorrect = inputValue[index] === testInfo[index].testLetter
@@ -156,7 +158,7 @@ class App extends React.Component {
     }
 
     render() {
-        console.log("Render method called")
+        // console.log("Render method called")
         return (
             <div className='app'>
                 {/* Nav section */}
