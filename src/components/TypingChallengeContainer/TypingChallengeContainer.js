@@ -2,7 +2,7 @@ import React from 'react'
 import ChallengeDetailsCard from '../ChallengeDetailsCard/ChallengeDetailsCard'
 import TypingChallenge from '../TypingChallenge/TypingChallenge'
 import './TypingChallengeContainer.css'
-const TypingChallengeContainer = ({ onInputChange, testInfo, selectedParagraph, timeRemaining, timerStarted, words, characters, wpm }) => {
+const TypingChallengeContainer = React.memo(({ onInputChange, testInfo, selectedParagraph, timeRemaining, timerStarted, words, characters, wpm }) => {
     return (
         <div className="typing-challenge-container">
             {/* Details section */}
@@ -20,6 +20,6 @@ const TypingChallengeContainer = ({ onInputChange, testInfo, selectedParagraph, 
             </div>
         </div>
     )
-}
+})
 
 export default TypingChallengeContainer

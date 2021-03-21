@@ -1,7 +1,7 @@
 import React from 'react'
 import './ChallengeDetailsCard.css'
 
-const ChallengeDetailsCard = ({ cardName, cardValue }) => {
+const ChallengeDetailsCard = React.memo(({ cardName, cardValue }) => {
     return (
         <div className="details-card-container">
             <div className="card-name">
@@ -13,5 +13,5 @@ const ChallengeDetailsCard = ({ cardName, cardValue }) => {
         </div>
     )
 }
-
+)
 export default ChallengeDetailsCard;

@@ -1,7 +1,7 @@
 import React from 'react'
 import './TryAgain.css'
 
-const TryAgain = ({ startAgain, words, characters, wpm }) => {
+const TryAgain = React.memo(({ startAgain, words, characters, wpm }) => {
     return (
         <div className='try-again-container'>
             <h1>Test Results</h1>
@@ -28,6 +28,6 @@ const TryAgain = ({ startAgain, words, characters, wpm }) => {
             </div>
         </div>
     )
-}
+})
 
 export default TryAgain

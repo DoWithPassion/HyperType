@@ -2,7 +2,7 @@ import React from 'react'
 import TestLetter from '../TestLetter/TestLetter'
 import './TypingChallenge.css'
 
-const TypingChallenge = ({ onInputChange, testInfo, selectedParagraph, timerStarted, timeRemaining }) => {
+const TypingChallenge = React.memo(({ onInputChange, testInfo, selectedParagraph, timerStarted, timeRemaining }) => {
 
     return (
         <div className="typing-challenge">
@@ -34,5 +34,5 @@ const TypingChallenge = ({ onInputChange, testInfo, selectedParagraph, timerStar
         </div >
     )
 }
-
+)
 export default TypingChallenge;

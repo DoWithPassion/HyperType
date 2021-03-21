@@ -3,7 +3,7 @@ import './TestContainer.css'
 import TryAgain from '../TryAgain/TryAgain'
 import TypingChallengeContainer from '../TypingChallengeContainer/TypingChallengeContainer'
 
-const TestContainer = ({ startAgain, onInputChange, selectedParagraph, timeRemaining, timerStarted, words, characters, wpm, testInfo }) => {
+const TestContainer = React.memo(({ startAgain, onInputChange, selectedParagraph, timeRemaining, timerStarted, words, characters, wpm, testInfo }) => {
     // const timeRemaining = 30;
 
     return (
@@ -22,6 +22,6 @@ const TestContainer = ({ startAgain, onInputChange, selectedParagraph, timeRemai
             }
         </div>
     )
-}
+})
 
 export default TestContainer
