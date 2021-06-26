@@ -9,7 +9,7 @@ const Nav = () => {
                 <p className='hyper-logo-text'>HyperType</p>
             </div>
             <div className='nav-right'>
-                <p className='nav-right-text'>VR</p>
+                <p className='nav-right-text'>Ravi</p>
             </div>
         </div>
     )
