@@ -15,18 +15,18 @@
  - The only difference is , setTimeout() triggers the expression only once while setInterval() keeps triggering expression regularly after the given interval of time. (unless you tell it to stop). To stop further calls, we should call clearInterval(timerId
 
 ### Algorithm for typing speed
-  *  1. Handle Underflow case - All the chars should be shown as not attempted
-    * 2. Handle Overflow case - Early exit
-    * 3. Handle the backspace
-    *      - Mark the [index+1] element as not attempted (irrespective of whether the index is less than zero) 
-    *      - But, dont forget to check for the overflow case
-    *          (index+1 can go outbound, when the index===length-1)
-    * 4. Update the status in the testinfo
-    *      - Find out the last char in the inputValue and its index
-    *      - Check if the character at same index in testInfo (state) matches
-    *      - Yes -> "Correct"
-    *      - No -> "incorrect"
-    * 5. Irrespected of the case, characters, words and speed (wpm) should be updated
+  1. Handle Underflow case - All the chars should be shown as not attempted
+  2. Handle Overflow case - Early exit
+  3. Handle the backspace
+       - Mark the [index+1] element as not attempted (irrespective of whether the index is less than zero) 
+       - But, dont forget to check for the overflow case
+           (index+1 can go outbound, when the index===length-1)
+  4. Update the status in the testinfo
+      - Find out the last char in the inputValue and its index
+      - Check if the character at same index in testInfo (state) matches
+      - Yes -> "Correct"
+      - No -> "incorrect"
+  5. Irrespected of the case, characters, words and speed (wpm) should be updated
 
 ### Deployment
 `npm install gh-pages --save-dev`
